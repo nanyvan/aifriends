@@ -33,24 +33,29 @@ const router = createRouter({
       name : '404'
     },
     {
-      path: '/user/account/',
+      path: '/user/account/login/',
       component : LoginIndex,
-      name : 'login-index'
+      name : 'user-account-login-index',
     },
     {
-      path: '/user/account/',
+      path: '/user/account/reginster/',
       component : RegisterIndex,
-      name : 'register-index'
+      name : 'user-account-register-index'
+    },
+    {
+      path: '/user/space/:user_id/',
+      component : SpaceIndex,
+      name : 'user-space-index'
     },
     {
       path: '/user/profile/',
       component : ProfileIndex,
-      name : 'profile-index'
+      name : 'user-profile-index'
     },
     {
-      path: '/user/space/',
-      component : SpaceIndex,
-      name : ''
+      path:'/:pathMatch(.*)*',
+      component : NotFoundIndex,
+      name:'not-found'
     },
   ],
 })
