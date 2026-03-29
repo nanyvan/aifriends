@@ -9,15 +9,15 @@ from web.models.user import UserProfile
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         try:
-            username = request.get("username").strip()
-            password = request.get("password").strip()
+            username = request.data.get("username").strip()
+            password = request.data.get("password").strip()
             if not username or not password:
                 return Response({
                     'result': '用户名和密码不能为空',
                 })
             user =  authenticate(username=username, password=password)
             if user: #用户名密码正确
-                user_profile = UserProfile.objects.get(username=username)
+                user_profile = UserProfile.objects.get(user=user)
                 refresh = RefreshToken.for_user(user) #生成jwt
                 response = Response({
                     'result' : 'success',

@@ -6,7 +6,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from web.models.user import UserProfile
 
 
-class Register(APIView):
+class RegisterView(APIView):
     def post(self, request):
         try:
             username = request.data['username'].strip()
@@ -40,6 +40,8 @@ class Register(APIView):
             )
             return response
         except:
+            import traceback
+            traceback.print_exc()
             return Response({
                 'result':'系统异常，请稍后重试',
             })
