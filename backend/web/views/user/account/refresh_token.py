@@ -14,7 +14,7 @@ class RefreshTokenView(APIView):
                     'result': 'refresh token 不存在',
                 },status = 401)#必须加这个401
             refresh = RefreshToken(refresh_token) #检验refresh_token在有效期内，如果过期了，会报异常
-            if settings.SIMPLE_JWT['ROTATE_REFRESH_TOKEN']:
+            if settings.SIMPLE_JWT['ROTATE_REFRESH_TOKENS']:
                 refresh.set_jti()
                 response = Response({
                     'result': 'success',

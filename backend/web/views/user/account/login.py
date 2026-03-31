@@ -20,12 +20,12 @@ class LoginView(APIView):
                 user_profile = UserProfile.objects.get(user=user)
                 refresh = RefreshToken.for_user(user) #生成jwt
                 response = Response({
-                    'result' : 'success',
-                    'access' : str(refresh.access_token),
-                    'user_id':user.id,
-                    'username' : user.username,
-                    'photo' : user_profile.photo.url,#必须加url,这样才会返回路径
-                    'profile' : user_profile.profile,
+                    'result': 'success',
+                    'access': str(refresh.access_token),
+                    'user_id': user.id,
+                    'username': user.username,
+                    'photo': user_profile.photo.url,#必须加url,这样才会返回路径
+                    'profile': user_profile.profile,
                 })
                 response.set_cookie(
                     key='refresh_token',
