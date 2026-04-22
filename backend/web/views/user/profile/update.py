@@ -16,7 +16,7 @@ class UpdateProfileView(APIView):
             user_profile = UserProfile.objects.get(user=user)
             username = request.data.get('username').strip()
             profile = request.data.get('profile').strip()[:500]
-            photo = request.FILES.get('phone',None)
+            photo = request.FILES.get('photo',None)
             if not username:
                 return Response({
                     'result': '名字不能为空',
