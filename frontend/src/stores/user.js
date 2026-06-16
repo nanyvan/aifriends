@@ -3,10 +3,10 @@ import {ref} from "vue";
 
 export const useUserStore = defineStore('user',()=>{
     const id = ref(0)
-    const username = ref()
-    const photo = ref()
-    const profile = ref()
-    const accessToken = ref()
+    const username = ref('')
+    const photo = ref('')
+    const profile = ref('')
+    const accessToken = ref('')
     const hasPulledUserInfo = ref(false)
 
     function isLogin(){
@@ -45,9 +45,5 @@ export const useUserStore = defineStore('user',()=>{
         logout,
         hasPulledUserInfo,
         setHasPulledUserInfo
-
-
-
-
     }
 })

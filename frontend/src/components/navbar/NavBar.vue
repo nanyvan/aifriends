@@ -1,7 +1,7 @@
 <script setup>
 
 import MenuIcon from "@/components/navbar/icons/MenuIcon.vue";
-import HomePageIcon from "@/components/navbar/icons/HomePageIcon.vue";
+import HomepageIcon from "@/components/navbar/icons/HomepageIcon.vue";
 import CreateIcon from "@/components/navbar/icons/CreateIcon.vue";
 import FriendIcon from "@/components/navbar/icons/FriendIcon.vue";
 import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
@@ -53,7 +53,7 @@ const user = useUserStore()
         <ul class="menu w-full grow">
           <li>
             <RouterLink :to="{name: 'homepage-index'}" active-class="menu-focus" class=" is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="首页">
-              <HomePageIcon />
+              <HomepageIcon />
               <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">首页</span>
             </RouterLink>
           </li>

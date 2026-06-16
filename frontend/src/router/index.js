@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePageIndex from "@/views/homepage/HomePageIndex.vue";
+import HomepageIndex from "@/views/homepage/HomepageIndex.vue";
 import FriendIndex from "@/views/friend/FriendIndex.vue";
 import CreateIndex from "@/views/create/CreateIndex.vue";
 import NotFoundIndex from "@/views/error/NotFoundIndex.vue";
@@ -8,6 +8,7 @@ import RegisterIndex from "@/views/user/account/RegisterIndex.vue";
 import ProfileIndex from "@/views/user/profile/ProfileIndex.vue";
 import SpaceIndex from "@/views/user/space/SpaceIndex.vue";
 import {useUserStore} from "@/stores/user.js";
+import UpdateCharacter from "@/views/create/character/UpdateCharacter.vue";
 
 
 const router = createRouter({
@@ -15,7 +16,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component : HomePageIndex,
+      component : HomepageIndex,
       name : 'homepage-index',
       meta:{
         needLogin : false
@@ -35,6 +36,14 @@ const router = createRouter({
       name : 'create-index',
       meta:{
         needLogin : true
+      },
+    },
+    {
+    path: '/create/character/update/:character_id/',
+    component : UpdateCharacter,
+    name : 'update-character',
+    meta:{
+      needLogin : true
       },
     },
     {

@@ -20,7 +20,7 @@ class UpdateCharacterView(APIView):
 
             if not name:
                 return Response({
-                    'result': '名字不能为空'
+                    'result': "名字不能为空"
                 })
             if not profile:
                 return Response({
@@ -41,5 +41,5 @@ class UpdateCharacterView(APIView):
                 })
         except:
             return Response({
-                'result': '系统异常,请稍后重试',
+                'result': '系统异常,请稍后重试'
             })
