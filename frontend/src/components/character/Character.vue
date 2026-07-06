@@ -39,7 +39,7 @@ async function handleRemoveCharacter(){
         </div>
         <div class="absolute top-54 left-4 avatar">
           <div class="w-16 rounded-full ring-3 ring-white">
-            <img :src="user.photo" alt="">
+            <img :src="character.photo" alt="">
           </div>
         </div>
         <div class="absolute left-24 top-58 right-4 text-white font-bold line-clamp-1 break-all">
