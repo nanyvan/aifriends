@@ -32,13 +32,13 @@ class UpdateCharacterView(APIView):
             if background_image:
                 remove_old_photo(character.background_image)
                 character.background_image = background_image
-                character.name = name
-                character.profile = profile
-                character.update_time = now()
-                character.save()
-                return Response({
-                    'result': 'success',
-                })
+            character.name = name
+            character.profile = profile
+            character.update_time = now()
+            character.save()
+            return Response({
+                'result': 'success',
+            })
         except:
             return Response({
                 'result': '系统异常,请稍后重试'
