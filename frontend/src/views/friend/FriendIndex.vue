@@ -30,9 +30,6 @@ async function loadMore() {
       newFriends = data.friends
     }
   } catch (err) {
-    console.log(err)
-    console.error('loadMore error:', err)
-    console.error('err response:', err.response?.data)
   } finally {
     isLoading.value = false
     if (newFriends.length === 0) {
