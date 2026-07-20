@@ -46,9 +46,6 @@ class CreateCharacterView(APIView):
                 'result': 'success',
             })
         except Exception as e:
-            print("=====================================")
-            print("🔥 报错内容：", str(e))
-            print("=====================================")
             return Response({
                 'result': '系统异常，请稍后重试'
             })
